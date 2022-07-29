@@ -1,0 +1,20 @@
+html>
+  <body>
+    Hello world <button onclick="sendMessage()">send</button>
+  <iframe id="frameEle" src="https://dev.appsmith.com/app/parent-messages/page1-62e38f8fe381484c91fc5cc1" style="height:200px;width:300px;"></iframe>
+    <script>
+       
+   const frameEle = document.getElementById("frameEle");
+   function sendMessage() {
+       console.log("send triggered")
+       frameEle.contentWindow.postMessage("Parent message", '*');
+   }
+   
+   window.addEventListener('message', function (e) {
+      // Get the sent data
+      console.log("from iframe", e);
+  });
+        
+  </script>
+  </<body>
+</html>
