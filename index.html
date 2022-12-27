@@ -1,7 +1,65 @@
 <html>
   <body>
-    string "Parent message" <button onclick="sendMessage('string data type')">string</button>
-    <br> numeric "Parent message" <button onclick="sendMessage('1234567890')">numeric</button>
+    string <button onclick="sendMessage('string data type')">string</button>
+    <br> numeric <button onclick="sendMessage('1234567890')">numeric</button>
+    <br> undefined <button onclick="sendMessage(undefined)">undefined</button>
+    <br> boolean <button onclick="sendMessage(false)">boolean</button>
+    <br> array <button onclick="sendMessage('[
+  {
+    "label": "Blue",
+    "value": "BLUE"
+  },
+  {
+    "label": "Green",
+    "value": "GREEN"
+  },
+  {
+    "label": "Red",
+    "value": "RED"
+  }
+]')">array</button>
+    <br> object <button onclick="sendMessage('{
+    employeeName: "John Doe",
+    employeeId: 27,
+    salary: {
+        '2018-19': "400000INR",
+        '2019-20': "500000INR",
+        '2020-21': "650000INR"
+    },
+    address: {
+        locality: {
+            address1: "1600 pebble road",
+            address2: "Nearby XYZ Bank",
+        },
+        city: "Mumbai",
+        state: "Maharashtra",
+        country: "India"
+  	  }
+		}')">object</button>
+    <br> nested array <button onclick="sendMessage('[
+  {
+    "label": "Blue",
+    "value": "BLUE",
+    "children": [
+      {
+        "label": "Dark Blue",
+        "value": "DARK BLUE"
+      },
+      {
+        "label": "Light Blue",
+        "value": "LIGHT BLUE"
+      }
+    ]
+  },
+  {
+    "label": "Green",
+    "value": "GREEN"
+  },
+  {
+    "label": "Red",
+    "value": "RED"
+  }
+]')">nested array</button>
   <iframe id="frameEle" src="https://appsmith-git-feat-parent-message-listener-get-appsmith.vercel.app/app/app-to-be-embedded/page1-63aadd43857c1d449cad09e4" style="height:500px;width:1000px;"></iframe>
     <script>
        
