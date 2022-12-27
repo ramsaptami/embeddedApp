@@ -1,19 +1,14 @@
 <html>
   <body>
-    Send "Parent message" <button onclick="sendMessage()">send</button>
+    string "Parent message" <button onclick="sendMessage('string data type')">string</button>
   <iframe id="frameEle" src="https://appsmith-emxddheqv-get-appsmith.vercel.app/app/web-page-639fd84b326af108c6f82d07" style="height:500px;width:1000px;"></iframe>
     <script>
        
    const frameEle = document.getElementById("frameEle");
-   function sendMessage() {
+   function sendMessage(string) {
        console.log("send triggered")
-       frameEle.contentWindow.postMessage("Parent message", '*');
+       frameEle.contentWindow.postMessage(string, '*');
    }
-   
-   window.addEventListener('message', function (e) {
-      // Get the sent data
-      console.log("from iframe", e);
-  });
         
   </script>
   </<body>
