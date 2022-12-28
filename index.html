@@ -93,4 +93,99 @@
    } 
   </script>
   </<body>
+
+<body>
+    string <button onclick="sendMessage('string data type')">Page 2 string</button>
+    <br> numeric <button onclick="sendMessage('1234567890')">Page 2 numeric</button>
+    <br> boolean <button onclick="sendComplexMessage(3)">Page 2 boolean</button>
+    <br> array <button onclick="sendComplexMessage(1)">Page 2 array</button>
+    <br> object <button onclick="sendComplexMessage(2)">Page 2 object</button>
+    <br> nestedArray <button onclick="sendComplexMessage(4)">Page 2 nestedArray</button>
+    
+    
+  <iframe id="frameEle" src="https://appsmith-git-feat-parent-message-listener-get-appsmith.vercel.app/app/app-to-be-embedded/page2-63aadee0857c1d449cad09e9" style="height:500px;width:1000px;"></iframe>
+    <script>
+       
+   const frameEle = document.getElementById("frameEle");
+     function sendMessage(string) {
+       console.log("send triggered")
+       frameEle.contentWindow.postMessage(string, '*');
+   }
+    
+       function sendMessage(numeric) {
+       console.log("send triggered")
+       frameEle.contentWindow.postMessage(numeric, '*');
+   }
+	    
+	function sendComplexMessage(type) {
+    let data = "data";
+    switch (type) {
+      case 1:
+        data = 
+          {
+            "label": "Blue",
+            "value": "BLUE"
+          },
+          {
+            "label": "Green",
+            "value": "GREEN"
+          },
+          {
+            "label": "Red",
+            "value": "RED"
+          }
+     ;
+	break;
+	case 2:
+        data = {
+    employeeName: "John Doe",
+    employeeId: 27,
+    salary: {
+        '2018-19': "400000INR",
+        '2019-20': "500000INR",
+        '2020-21': "650000INR"
+    },
+    address: {
+        locality: {
+            address1: "1600 pebble road",
+            address2: "Nearby XYZ Bank",
+        },
+        city: "Mumbai",
+        state: "Maharashtra",
+        country: "India"
+  	  }
+	};
+	break;
+	case 3:
+	    data = false;
+	break;
+	case 4:
+	data = {
+    "label": "Blue",
+    "value": "BLUE",
+    "children": [
+      {
+        "label": "Dark Blue",
+        "value": "DARK BLUE"
+      },
+      {
+        "label": "Light Blue",
+        "value": "LIGHT BLUE"
+      }
+    ]
+  },
+  {
+    "label": "Green",
+    "value": "GREEN"
+  },
+  {
+    "label": "Red",
+    "value": "RED"
+  };
+     break;
+   }
+     sendMessage(data);
+   } 
+  </script>
+  </<body>
 </html>
