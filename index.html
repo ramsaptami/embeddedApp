@@ -2,22 +2,47 @@
   <body>
     string <button onclick="sendMessage('string data type')">string</button>
     <br> numeric <button onclick="sendMessage('1234567890')">numeric</button>
-    <br> boolean <button onclick="sendMessage(false)">boolean</button>
-    <br> array <button onclick="sendMessage([
-  {
-    "label": "Blue",
-    "value": "BLUE"
-  },
-  {
-    "label": "Green",
-    "value": "GREEN"
-  },
-  {
-    "label": "Red",
-    "value": "RED"
-  }
-])">array</button>
-    <br> object <button onclick="sendMessage('{
+    <br> boolean <button onclick="sendComplexMessage(3)">boolean</button>
+    <br> array <button onclick="sendComplexMessage(1)">array</button>
+    <br> object <button onclick="sendComplexMessage(1)">object</button>
+    <br> nestedArray <button onclick="sendComplexMessage(1)">nestedArray</button>
+    
+    
+  <iframe id="frameEle" src="https://appsmith-git-feat-parent-message-listener-get-appsmith.vercel.app/app/app-to-be-embedded/page1-63aadd43857c1d449cad09e4" style="height:500px;width:1000px;"></iframe>
+    <script>
+       
+   const frameEle = document.getElementById("frameEle");
+     function sendMessage(string) {
+       console.log("send triggered")
+       frameEle.contentWindow.postMessage(string, '*');
+   }
+    
+       function sendMessage(numeric) {
+       console.log("send triggered")
+       frameEle.contentWindow.postMessage(numeric, '*');
+   }
+	    
+	function sendComplexMessage(type) {
+    let data = "data";
+    switch (type) {
+      case 1:
+        data = [
+          {
+            "label": "Blue",
+            "value": "BLUE"
+          },
+          {
+            "label": "Green",
+            "value": "GREEN"
+          },
+          {
+            "label": "Red",
+            "value": "RED"
+          }
+        ];
+	case 2:
+        data = [
+          {
     employeeName: "John Doe",
     employeeId: 27,
     salary: {
@@ -34,9 +59,12 @@
         state: "Maharashtra",
         country: "India"
   	  }
-		}')">object</button>
-    <br> nested array <button onclick="sendMessage('[
-  {
+		}
+        ];
+	case 3:
+	    data = [false];
+	case 4:
+		data = [{
     "label": "Blue",
     "value": "BLUE",
     "children": [
@@ -57,20 +85,10 @@
   {
     "label": "Red",
     "value": "RED"
-  }
-]')">nested array</button>
-  <iframe id="frameEle" src="https://appsmith-git-feat-parent-message-listener-get-appsmith.vercel.app/app/app-to-be-embedded/page1-63aadd43857c1d449cad09e4" style="height:500px;width:1000px;"></iframe>
-    <script>
-       
-   const frameEle = document.getElementById("frameEle");
-     function sendMessage(string) {
-       console.log("send triggered")
-       frameEle.contentWindow.postMessage(string, '*');
-   }
-    
-       function sendMessage(numeric) {
-       console.log("send triggered")
-       frameEle.contentWindow.postMessage(numeric, '*');
+  }];
+        break;
+     }
+     sendMessage(data);
    }
       
   </script>
