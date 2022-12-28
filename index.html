@@ -26,7 +26,7 @@
     let data = "data";
     switch (type) {
       case 1:
-        data = [
+        data = 
           {
             "label": "Blue",
             "value": "BLUE"
@@ -39,11 +39,10 @@
             "label": "Red",
             "value": "RED"
           }
-        ];
+     ;
 	break;
 	case 2:
-        data = [
-          {
+        data = {
     employeeName: "John Doe",
     employeeId: 27,
     salary: {
@@ -60,14 +59,13 @@
         state: "Maharashtra",
         country: "India"
   	  }
-		}
-        ];
+	};
 	break;
 	case 3:
-	    data = [false];
+	    data = false;
 	break;
 	case 4:
-		data = [{
+	data = {
     "label": "Blue",
     "value": "BLUE",
     "children": [
@@ -88,12 +86,11 @@
   {
     "label": "Red",
     "value": "RED"
-  }];
-        break;
-     }
-     sendMessage(data);
+  };
+     break;
    }
-      
+     sendMessage(data);
+   } 
   </script>
   </<body>
 </html>
