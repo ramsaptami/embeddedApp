@@ -4,8 +4,8 @@
     <br> numeric <button onclick="sendMessage('1234567890')">numeric</button>
     <br> boolean <button onclick="sendComplexMessage(3)">boolean</button>
     <br> array <button onclick="sendComplexMessage(1)">array</button>
-    <br> object <button onclick="sendComplexMessage(1)">object</button>
-    <br> nestedArray <button onclick="sendComplexMessage(1)">nestedArray</button>
+    <br> object <button onclick="sendComplexMessage(2)">object</button>
+    <br> nestedArray <button onclick="sendComplexMessage(4)">nestedArray</button>
     
     
   <iframe id="frameEle" src="https://appsmith-git-feat-parent-message-listener-get-appsmith.vercel.app/app/app-to-be-embedded/page1-63aadd43857c1d449cad09e4" style="height:500px;width:1000px;"></iframe>
@@ -40,6 +40,7 @@
             "value": "RED"
           }
         ];
+	break;
 	case 2:
         data = [
           {
@@ -61,8 +62,10 @@
   	  }
 		}
         ];
+	break;
 	case 3:
 	    data = [false];
+	break;
 	case 4:
 		data = [{
     "label": "Blue",
