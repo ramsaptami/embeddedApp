@@ -13,12 +13,12 @@
        
    const frameEle = document.getElementById("frameEle");
      function sendMessage(string) {
-       console.log("send triggered")
+       console.log("triggered subscribe from Appsmith on an iFrame")
        frameEle.contentWindow.postMessage(string, '*');
    }
     
        function sendMessage(numeric) {
-       console.log("send triggered")
+       console.log("triggered subscribe from Appsmith on an iFrame")
        frameEle.contentWindow.postMessage(numeric, '*');
    }
 	    
@@ -91,6 +91,12 @@
    }
      sendMessage(data);
    } 
+	    
+	window.addEventListener('message', function (e) {
+      // Get the sent data
+      console.log("from iframe", e);
+  });
+	    
   </script>
   </<body>
 </html>
