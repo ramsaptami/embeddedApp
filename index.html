@@ -1,7 +1,7 @@
 <html>
   <body>
     string <button onclick="sendMessage('string data type')">string</button>
-    <br> numeric <button onclick="sendMessage('1234567890')">numeric</button>
+    <br> numeric <button onclick="sendMessage1(1234567890)">numeric</button>
     <br> boolean <button onclick="sendComplexMessage(3)">boolean</button>
     <br> array <button onclick="sendComplexMessage(1)">array</button>
     <br> object <button onclick="sendComplexMessage(2)">object</button>
@@ -17,7 +17,7 @@
        frameEle.contentWindow.postMessage(string, '*');
    }
     
-       function sendMessage(numeric) {
+       function sendMessage1(numeric) {
        console.log("sending a number from Appsmith on an iFrame")
        frameEle.contentWindow.postMessage(numeric, '*');
    }
